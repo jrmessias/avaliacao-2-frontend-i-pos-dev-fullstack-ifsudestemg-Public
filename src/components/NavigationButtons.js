@@ -2,7 +2,7 @@ import {Text, TouchableOpacity, View} from 'react-native';
 import {globalStyles} from "../assets/globalStyles";
 
 export default function NavigationButtons({navigation}) {
-    return (
+    return <>
         <View style={globalStyles.navRow}>
             <TouchableOpacity
                 style={globalStyles.navBtn}
@@ -32,5 +32,5 @@ export default function NavigationButtons({navigation}) {
                 <Text style={globalStyles.navLabel}>Sobre</Text>
             </TouchableOpacity>
         </View>
-    );
+    </>
 }

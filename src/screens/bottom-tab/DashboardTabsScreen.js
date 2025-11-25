@@ -7,11 +7,11 @@ import {createBottomTabNavigator} from "@react-navigation/bottom-tabs";
 const Tab = createBottomTabNavigator();
 
 export default function DashboardTabsScreen() {
-    return (
+    return <>
         <Tab.Navigator initialRouteName="TabOne">
             <Tab.Screen name="TabOne" component={TabOneScreen} options={{ title: 'Geração I-III' }} />
             <Tab.Screen name="TabTwo" component={TabTwoScreen} options={{ title: 'Geração IV-VI' }} />
             <Tab.Screen name="TabThree" component={TabThreeScreen} options={{ title: 'Geração VII-IX' }} />
         </Tab.Navigator>
-    );
+    </>
 }

@@ -1,12 +1,12 @@
 import {globalStyles} from "../assets/globalStyles";
 import {Text, TouchableOpacity, View} from "react-native";
 
-export default function BackStackButton({navigation}) {
+export default function BackHomeButton({navigation}) {
     return <>
         <View style={globalStyles.buttonRow}>
             <TouchableOpacity
                 style={globalStyles.navBtn}
-                onPress={() => navigation.getParent()?.navigate('Welcome')}
+                onPress={() => navigation.navigate('Welcome')}
             >
                 <Text style={globalStyles.navLabel}>Voltar para inicial</Text>
             </TouchableOpacity>
