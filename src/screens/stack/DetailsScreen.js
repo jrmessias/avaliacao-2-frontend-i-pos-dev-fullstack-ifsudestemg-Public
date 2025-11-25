@@ -9,8 +9,6 @@ export default function DetailsScreen({ navigation }) {
 
             <Text style={globalStyles.title}>Details</Text>
             <NavigationButtons navigation={navigation}/>
-            <Button title="Welcome" onPress={() => navigation.navigate('Welcome')} />
-            {/*<Button title="Voltar" onPress={() => navigation.goBack()} />*/}
         </View>
     );
 }

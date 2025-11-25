@@ -11,27 +11,25 @@ export default function NavigationButtons({navigation}) {
                 <Text style={globalStyles.navLabel}>Welcome</Text>
             </TouchableOpacity>
 
-
-            <TouchableOpacity
-                style={globalStyles.navBtn}
-                onPress={() => navigation.navigate('Dashboard')}
-            >
-                <Text style={globalStyles.navLabel}>Dashboard</Text>
-            </TouchableOpacity>
-
-
             <TouchableOpacity
                 style={globalStyles.navBtn}
                 onPress={() => navigation.navigate('Details')}
             >
-                <Text style={globalStyles.navLabel}>Details</Text>
+                <Text style={globalStyles.navLabel}>Lista</Text>
+            </TouchableOpacity>
+
+            <TouchableOpacity
+                style={globalStyles.navBtn}
+                onPress={() => navigation.navigate('StackDashboard')}
+            >
+                <Text style={globalStyles.navLabel}>Gerações</Text>
             </TouchableOpacity>
 
             <TouchableOpacity
                 style={globalStyles.navBtn}
                 onPress={() => navigation.navigate('About')}
             >
-                <Text style={globalStyles.navLabel}>About</Text>
+                <Text style={globalStyles.navLabel}>Sobre</Text>
             </TouchableOpacity>
         </View>
     );

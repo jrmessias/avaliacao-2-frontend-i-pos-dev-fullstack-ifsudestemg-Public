@@ -59,15 +59,13 @@ export default function App() {
         <NavigationContainer>
             <Stack.Navigator initialRouteName="Welcome">
                 <Stack.Screen name="Welcome" component={WelcomeScreen} options={{ title: 'Bem-vindo' }} />
-
+                <Stack.Screen name="Details" component={DetailsScreen} options={{ title: 'Detalhes' }} />
                 {/* Esta tela do Stack contém o Bottom Tabs com duas telas (TabOne, TabTwo) */}
                 <Stack.Screen
-                    name="Dashboard"
+                    name="StackDashboard"
                     component={DashboardTabsScreen}
                     options={{ headerShown: false }}
                 />
-
-                <Stack.Screen name="Details" component={DetailsScreen} options={{ title: 'Detalhes' }} />
                 <Stack.Screen name="About" component={AboutScreen} options={{ title: 'Sobre' }} />
             </Stack.Navigator>
         </NavigationContainer>
