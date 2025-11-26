@@ -13,9 +13,8 @@ export default function App() {
     return (
         <NavigationContainer>
             <Stack.Navigator initialRouteName="Favorite" screenOptions={{
-
                 headerStyle: {
-                    backgroundColor: '#cc0000m'
+                    backgroundColor: '#cc0000'
                 },
                 headerTintColor: '#fff',
                 headerTitleStyle: {
