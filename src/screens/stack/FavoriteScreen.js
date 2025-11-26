@@ -1,4 +1,4 @@
-import {Alert, FlatList, Image, StyleSheet, Text, TextInput, TouchableOpacity, View} from "react-native";
+import {FlatList, Image, StyleSheet, Text, TextInput, TouchableOpacity, View} from "react-native";
 import React, {useEffect, useState} from "react";
 import {globalStyles} from "../../assets/globalStyles";
 import NavigationButtons from "../../components/NavigationButtons";
@@ -38,11 +38,11 @@ export default function FavoriteScreen({navigation}) {
 
     const handleAdd = async () => {
         const validarForm = (pokemonName, pokemonNumber) => {
-            if(!pokemonName.trim()) {
+            if (!pokemonName.trim()) {
                 setErro('Digite como você irá chamar este pokémon!');
                 return false;
             }
-            if(!pokemonNumber.trim()) {
+            if (!pokemonNumber.trim()) {
                 setErro('Digite o número do pokémon!');
                 return false;
             }
@@ -89,7 +89,7 @@ export default function FavoriteScreen({navigation}) {
     return <>
         <SafeAreaProvider>
             <SafeAreaView>
-                <View style={globalStyles.container}>
+                <View style={[globalStyles.container]}>
                     <NavigationButtons navigation={navigation}/>
                     <Text style={globalStyles.title}>Pokémons Favoritos</Text>
                     <View style={globalStyles.formRow}>
@@ -135,15 +135,18 @@ export default function FavoriteScreen({navigation}) {
                                         source={{uri: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/shiny/${item.number}.png`}}
                                         style={styles.sprite}/>
                                 </View>
-                                <Text style={styles.itemText}>{`#${String(item.number).padStart(3, '0')} — ${capitalize(item.name)}`}</Text>
+                                <Text
+                                    style={styles.itemText}>{`#${String(item.number).padStart(3, '0')} — ${capitalize(item.name)}`}</Text>
                                 <View style={styles.buttons}>
-                                    {editId === item.id ? null : <TouchableOpacity><BButton type="primary" onPress={() => handleEdit(item)}>
-                                        Editar
-                                    </BButton></TouchableOpacity>}
+                                    {editId === item.id ? null :
+                                        <TouchableOpacity><BButton type="primary" onPress={() => handleEdit(item)}>
+                                            Editar
+                                        </BButton></TouchableOpacity>}
 
-                                    {editId === item.id ? null : <TouchableOpacity><BButton type="danger" onPress={() => handleDelete(item.id)}>
-                                        Deletar
-                                    </BButton></TouchableOpacity>}
+                                    {editId === item.id ? null :
+                                        <TouchableOpacity><BButton type="danger" onPress={() => handleDelete(item.id)}>
+                                            Deletar
+                                        </BButton></TouchableOpacity>}
                                 </View>
                             </View>
                         )}
@@ -182,6 +185,10 @@ const styles = StyleSheet.create({
         borderRadius: 8,
         borderColor: '#ccc',
         borderWidth: 1,
+    },
+    listContent: {
+        paddingBottom: 24,
+        width: '100%',
     },
     item: {
         flexDirection: 'row',

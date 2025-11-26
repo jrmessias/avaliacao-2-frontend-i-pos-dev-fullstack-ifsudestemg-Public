@@ -1,4 +1,4 @@
-import {Platform, ScrollView, StyleSheet, Text, View} from "react-native";
+import {ScrollView, Text, View} from "react-native";
 import React from "react";
 import {SafeAreaProvider, SafeAreaView} from "react-native-safe-area-context";
 import {globalStyles} from "../../assets/globalStyles";

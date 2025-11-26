@@ -3,7 +3,6 @@ import TabOneScreen from "./TabOneScreen";
 import TabTwoScreen from "./TabTwoScreen";
 import TabThreeScreen from "./TabThreeScreen";
 import {createBottomTabNavigator} from "@react-navigation/bottom-tabs";
-import NavigationButtons from "../../components/NavigationButtons";
 
 const Tab = createBottomTabNavigator();
 

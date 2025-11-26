@@ -16,9 +16,6 @@ import BAlert from "../../components/bootstrap/BAlert";
 import {SafeAreaProvider, SafeAreaView} from "react-native-safe-area-context";
 import NavigationButtons from "../../components/NavigationButtons";
 
-const POKEMON_SPRITE_URL = (id) =>
-    `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/${id}.png`;
-
 export default function ListScreen({navigation}) {
     const [pokemon, setPokemon] = useState([]); // { id, name, image }
     const [loading, setLoading] = useState(true);
@@ -34,13 +31,13 @@ export default function ListScreen({navigation}) {
             const json = await res.json();
             const species = json.pokemon_species || [];
 
-            // Map species to { id, name, image } extracting id from url
+            // { id, name }
             const mapped = species
                 .map((s) => {
                     const match = s.url.match(/\/pokemon-species\/(\d+)\//);
                     const id = match ? Number(match[1]) : null;
                     return id
-                        ? {id, name: s.name, image: POKEMON_SPRITE_URL(id)}
+                        ? {id, name: s.name}
                         : null;
                 })
                 .filter(Boolean)
@@ -49,7 +46,7 @@ export default function ListScreen({navigation}) {
             setPokemon(mapped);
             setSelectedId(null);
         } catch (err) {
-            console.warn('Erro ao carregar Geração ${gen}:', err);
+            console.warn(`Erro ao carregar Geração ${gen}:`, err);
         } finally {
             setLoading(false);
         }
@@ -96,7 +93,7 @@ export default function ListScreen({navigation}) {
 
     if (loading) {
         return (
-            <View style={styles.center}>
+            <View style={globalStyles.center}>
                 <ActivityIndicator size="large"/>
             </View>
         );
@@ -186,25 +183,6 @@ function capitalize(str = '') {
 }
 
 const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        padding: 12,
-        alignItems: 'stretch',
-        justifyContent: 'flex-start',
-        backgroundColor: '#f7f7f8',
-    },
-    center: {
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-    },
-    header: {
-        fontSize: 20,
-        fontWeight: '700',
-        marginBottom: 10,
-        color: '#222',
-        alignSelf: 'stretch',
-    },
     searchWrapper: {
         alignSelf: 'stretch',
         position: 'relative',
@@ -236,14 +214,9 @@ const styles = StyleSheet.create({
         height: 44,
         borderWidth: 0,
         borderRadius: 12,
-        paddingLeft: 40, // espaço para o ícone
-        paddingRight: 44, // espaço para o botão limpar
+        paddingLeft: 40,
+        paddingRight: 44,
         backgroundColor: '#fff',
-        shadowColor: '#000',
-        shadowOffset: {width: 0, height: 1},
-        shadowOpacity: 0.08,
-        shadowRadius: 4,
-        elevation: 2,
         fontSize: 15,
     },
 
@@ -286,10 +259,7 @@ const styles = StyleSheet.create({
         fontWeight: '600',
         color: '#111',
     },
-    empty: {
-        padding: 20,
-        alignItems: 'center',
-    },
+
 
     genButtonsWrapper: {
         marginBottom: 12,
@@ -298,6 +268,7 @@ const styles = StyleSheet.create({
         paddingVertical: 6,
         paddingHorizontal: 2,
     },
+
     genBtn: {
         minWidth: 56,
         paddingVertical: 8,
@@ -307,12 +278,6 @@ const styles = StyleSheet.create({
         backgroundColor: '#fff',
         alignItems: 'center',
         justifyContent: 'center',
-        // sombra leve
-        shadowColor: '#000',
-        shadowOffset: {width: 0, height: 1},
-        shadowOpacity: 0.06,
-        shadowRadius: 3,
-        elevation: 1,
     },
     genBtnSelected: {
         backgroundColor: '#4A90E2',
