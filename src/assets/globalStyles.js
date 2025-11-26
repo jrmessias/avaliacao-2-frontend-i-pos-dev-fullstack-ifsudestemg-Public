@@ -37,8 +37,8 @@ export const globalStyles = StyleSheet.create({
     },
     navRow: {
         flexDirection: 'row',
-        paddingVertical: 12,
-        gap: 10,
+        paddingVertical: 5,
+        gap: 5,
         width: '100%'
     },
     navBtn: {

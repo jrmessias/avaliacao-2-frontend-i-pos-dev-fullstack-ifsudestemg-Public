@@ -87,8 +87,7 @@ export default function FavoriteScreen({navigation}) {
     };
 
     return <>
-        <SafeAreaProvider>
-            <SafeAreaView>
+
                 <View style={[globalStyles.container]}>
                     <NavigationButtons navigation={navigation}/>
                     <Text style={globalStyles.title}>Pokémons Favoritos</Text>
@@ -158,8 +157,7 @@ export default function FavoriteScreen({navigation}) {
                         }
                     />
                 </View>
-            </SafeAreaView>
-        </SafeAreaProvider>
+
     </>
 }
 
