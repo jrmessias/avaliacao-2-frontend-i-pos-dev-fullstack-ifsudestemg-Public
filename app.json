@@ -20,13 +20,19 @@
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "edgeToEdgeEnabled": true
+      "edgeToEdgeEnabled": true,
+      "package": "com.jrmessias.avaliacao2frontendiposdevfullstackifsudestemg"
     },
     "web": {
       "favicon": "./assets/favicon.png"
     },
     "plugins": [
       "react-native-blasted-image"
-    ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "f1f8d392-b77c-4b90-b3eb-0b07a86486b4"
+      }
+    }
   }
 }

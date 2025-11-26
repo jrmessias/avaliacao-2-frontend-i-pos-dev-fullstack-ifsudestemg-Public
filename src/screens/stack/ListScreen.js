@@ -27,6 +27,7 @@ export default function ListScreen({navigation}) {
     const loadGeneration = useCallback(async (gen = 1) => {
         try {
             setLoading(true);
+
             const res = await fetch(`https://pokeapi.co/api/v2/generation/${gen}/`);
             const json = await res.json();
             const species = json.pokemon_species || [];
@@ -42,6 +43,7 @@ export default function ListScreen({navigation}) {
                 })
                 .filter(Boolean)
                 .sort((a, b) => a.id - b.id);
+
 
             setPokemon(mapped);
             setSelectedId(null);

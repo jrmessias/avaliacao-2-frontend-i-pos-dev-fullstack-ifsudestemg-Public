@@ -30,6 +30,7 @@ export default function AboutScreen({navigation}) {
                             <Text style={globalStyles.textParagraph}>- Node.js</Text>
                             <Text style={globalStyles.textParagraph}>- Reactive Native</Text>
                             <Text style={globalStyles.textParagraph}>- Expo</Text>
+                            <Text style={globalStyles.textParagraph}>- AsyncStorage</Text>
                             <Text style={globalStyles.textParagraph}>- pokeApi</Text>
                         </View>
                     </View>

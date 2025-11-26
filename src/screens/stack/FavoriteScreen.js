@@ -93,20 +93,20 @@ export default function FavoriteScreen({navigation}) {
                     <NavigationButtons navigation={navigation}/>
                     <Text style={globalStyles.title}>Pokémons Favoritos</Text>
                     <View style={globalStyles.formRow}>
-                        <Text class={globalStyles.formLabel}>Como você irá chamar este pokémon:</Text>
+                        <Text class={globalStyles.formLabel}>Nome:</Text>
                         <TextInput
                             style={globalStyles.formInput}
-                            placeholder="Nome"
+                            placeholder="Nome do pokémon"
                             value={pokemonName}
                             onChangeText={setPokemonName}
                         />
 
-                        <Text class={globalStyles.formLabel}>Número do pokémon:</Text>
+                        <Text class={globalStyles.formLabel}>Número:</Text>
                         <TextInput
                             inputMode="numeric"
                             keyboardType="numeric"
                             style={globalStyles.formInput}
-                            placeholder="#"
+                            placeholder="# Número do pokémon"
                             value={pokemonNumber}
                             onChangeText={setPokemonNumber}
                         />
