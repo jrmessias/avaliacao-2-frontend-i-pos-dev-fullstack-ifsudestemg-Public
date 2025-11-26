@@ -1,4 +1,4 @@
-import {Text, View} from "react-native";
+import {ScrollView, Text, View} from "react-native";
 import React from "react";
 import {globalStyles} from "../../assets/globalStyles";
 import BackStackButton from "../../components/BackStackButton";
@@ -7,11 +7,12 @@ import {SafeAreaProvider, SafeAreaView} from "react-native-safe-area-context";
 export default function TabTwoScreen({navigation}) {
     return <>
         <SafeAreaProvider>
-            <SafeAreaView>
-                <View style={globalStyles.center}>
+            <SafeAreaView style={[globalStyles.container, globalStyles.center]}>
+                <ScrollView>
+                <View>
                     <Text style={globalStyles.title}>Geração IV-VI</Text>
 
-                    <View style={globalStyles.container}>
+                    <View>
                         <Text style={globalStyles.textTitle}>Geração IV — Sinnoh (2006)</Text>
                         <Text style={globalStyles.textParagraph}>
                             Organizou os ataques em categorias físicas/especiais por movimento, o que transformou o
@@ -30,9 +31,9 @@ export default function TabTwoScreen({navigation}) {
                             estratégicas.
                         </Text>
                     </View>
-
                     <BackStackButton navigation={navigation}/>
                 </View>
+                </ScrollView>
             </SafeAreaView>
         </SafeAreaProvider>
     </>

@@ -1,10 +1,11 @@
-import { StyleSheet } from 'react-native';
+import {StyleSheet} from 'react-native';
 
 export const globalStyles = StyleSheet.create({
     container: {
         flex: 1,
-        alignItems: 'flex-start',   // mantém o conteúdo alinhado ao início horizontal
-        justifyContent: 'flex-start', // mantém tudo no topo vertical
+        // alignItems: 'flex-start',
+        alignItems: 'stretch',
+        justifyContent: 'flex-start',
         padding: 16
     },
     center: {
@@ -18,7 +19,7 @@ export const globalStyles = StyleSheet.create({
         marginBottom: 12,
         fontWeight: '700',
     },
-    textTitle:{
+    textTitle: {
         fontSize: 18,
         fontWeight: '700',
         marginBottom: 6,
@@ -37,7 +38,7 @@ export const globalStyles = StyleSheet.create({
     },
     navRow: {
         flexDirection: 'row',
-        padding: 12,
+        paddingVertical: 12,
         gap: 10,
         width: '100%'
     },
@@ -61,5 +62,39 @@ export const globalStyles = StyleSheet.create({
         padding: 12,
         gap: 10,
         width: '100%'
+    },
+    formRow: {
+        flexDirection: 'row',
+        width: '100%',
+        alignItems: 'center',
+        gap: 8,
+    },
+    formLabel: {
+        flex: 1,
+        height: 40,
+        backgroundColor: '#fff',
+        paddingHorizontal: 10,
+        fontWeight: "600",
+    },
+    formInput: {
+        flex: 1,
+        height: 40,
+        backgroundColor: '#fff',
+        borderWidth: 1,
+        borderColor: '#ccc',
+        borderRadius: 6,
+        paddingHorizontal: 10,
+    },
+    formBtn: {
+        backgroundColor: '#007BFF',
+        paddingHorizontal: 14,
+        height: 40,
+        borderRadius: 6,
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+    formBtnText: {
+        color: '#fff',
+        fontWeight: '600',
     },
 });

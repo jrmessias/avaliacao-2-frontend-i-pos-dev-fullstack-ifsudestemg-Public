@@ -1,4 +1,4 @@
-import {Text, View} from "react-native";
+import {ScrollView, Text, View} from "react-native";
 import React from "react";
 import {globalStyles} from "../../assets/globalStyles";
 import BackStackButton from "../../components/BackStackButton";
@@ -7,11 +7,12 @@ import {SafeAreaProvider, SafeAreaView} from "react-native-safe-area-context";
 export default function TabThreeScreen({navigation}) {
     return <>
         <SafeAreaProvider>
-            <SafeAreaView>
-                <View style={globalStyles.center}>
+            <SafeAreaView style={[globalStyles.container, globalStyles.center]}>
+                <ScrollView>
+                <View>
                     <Text style={globalStyles.title}>Geração VII-IX</Text>
 
-                    <View style={globalStyles.container}>
+                    <View>
                         <Text style={globalStyles.textTitle}>Geração VII — Alola (2016)</Text>
                         <Text style={globalStyles.textParagraph}>
                             Substituiu Ginásios por Desafios de Ilha e introduziu formas regionais. A narrativa ganhou
@@ -30,9 +31,9 @@ export default function TabThreeScreen({navigation}) {
                             tipos, e a estrutura não linear reformulou o progresso tradicional.
                         </Text>
                     </View>
-
                     <BackStackButton navigation={navigation}/>
                 </View>
+                </ScrollView>
             </SafeAreaView>
         </SafeAreaProvider>
     </>

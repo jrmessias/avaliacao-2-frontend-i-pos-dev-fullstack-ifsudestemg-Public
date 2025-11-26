@@ -6,30 +6,30 @@ export default function NavigationButtons({navigation}) {
         <View style={globalStyles.navRow}>
             <TouchableOpacity
                 style={globalStyles.navBtn}
-                onPress={() => navigation.navigate('Welcome')}
+                onPress={() => navigation.navigate('Favorite')}
             >
-                <Text style={globalStyles.navLabel}>Welcome</Text>
+                <Text style={globalStyles.navLabel}>Favoritos ⭐</Text>
             </TouchableOpacity>
 
             <TouchableOpacity
                 style={globalStyles.navBtn}
-                onPress={() => navigation.navigate('Details')}
+                onPress={() => navigation.navigate('List')}
             >
-                <Text style={globalStyles.navLabel}>Lista</Text>
+                <Text style={globalStyles.navLabel}>Pokémon ⚡</Text>
             </TouchableOpacity>
 
             <TouchableOpacity
                 style={globalStyles.navBtn}
                 onPress={() => navigation.navigate('StackDashboard')}
             >
-                <Text style={globalStyles.navLabel}>Gerações</Text>
+                <Text style={globalStyles.navLabel}>Gerações 🐲</Text>
             </TouchableOpacity>
 
             <TouchableOpacity
                 style={globalStyles.navBtn}
                 onPress={() => navigation.navigate('About')}
             >
-                <Text style={globalStyles.navLabel}>Sobre</Text>
+                <Text style={globalStyles.navLabel}>Sobre ℹ️</Text>
             </TouchableOpacity>
         </View>
     </>

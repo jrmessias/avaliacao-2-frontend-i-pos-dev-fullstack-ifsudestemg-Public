@@ -6,9 +6,9 @@ export default function BackHomeButton({navigation}) {
         <View style={globalStyles.buttonRow}>
             <TouchableOpacity
                 style={globalStyles.navBtn}
-                onPress={() => navigation.navigate('Welcome')}
+                onPress={() => navigation.navigate('Favorite')}
             >
-                <Text style={globalStyles.navLabel}>Voltar para inicial</Text>
+                <Text style={globalStyles.navLabel}>◀️ Favoritos</Text>
             </TouchableOpacity>
         </View>
     </>

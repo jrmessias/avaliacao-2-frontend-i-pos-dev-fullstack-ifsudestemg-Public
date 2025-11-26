@@ -6,9 +6,9 @@ export default function BackStackButton({navigation}) {
         <View style={globalStyles.buttonRow}>
             <TouchableOpacity
                 style={globalStyles.navBtn}
-                onPress={() => navigation.getParent()?.navigate('Welcome')}
+                onPress={() => navigation.getParent()?.navigate('Favorite')}
             >
-                <Text style={globalStyles.navLabel}>Voltar para inicial</Text>
+                <Text style={globalStyles.navLabel}>◀️ Favoritos</Text>
             </TouchableOpacity>
         </View>
     </>
