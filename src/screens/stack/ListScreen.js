@@ -102,8 +102,7 @@ export default function ListScreen({navigation}) {
     }
 
     return (
-        <SafeAreaProvider>
-            <SafeAreaView>
+
                 <View style={globalStyles.container}>
                     <NavigationButtons navigation={navigation}/>
                     <Text style={globalStyles.title}>Pokémon</Text>
@@ -174,8 +173,7 @@ export default function ListScreen({navigation}) {
                         />
                     )}
                 </View>
-            </SafeAreaView>
-        </SafeAreaProvider>
+
     );
 }
 
